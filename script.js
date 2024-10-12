@@ -35,7 +35,7 @@ if(isValid){
     feedbackDiv.textContent="Registration successful!";
     feedbackDiv.style.color="#28a745";
       // If all validations pass, submit the form
-      form.submit();
+      //form.submit();
 }
 if(!isValid){
     const feedbackDiv=document.getElementById('form-feedback');
