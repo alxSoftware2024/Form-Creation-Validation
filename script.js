@@ -33,7 +33,7 @@ if(isValid==true){
     const displayfib=document.getElementById('form-feedback');
     displayfib.style.display='block';
     displayfib.style.color='#28a745';
-    feedbackDiv.innerHTML="Registration successful!";
+    feedbackDiv.textContent="Registration successful!";
     
       // If all validations pass, submit the form
       form.submit();
