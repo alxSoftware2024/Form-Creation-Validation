@@ -26,13 +26,25 @@ if(password.length<8)
     isValid=false;
     messages[2]=['password length  invalid'];
 }
-if(isValid===true){
+if(isValid==true){
+    const displayfib=document.getElementById('form-feedback');
+    displayfib.style.display='block';
+    displayfib.style.color='28a745';
     feedbackDiv.innerHTML="Registration successful!";
     
       // If all validations pass, submit the form
-      form.submit();
+      //form.submit();
 }
-
+if(isValid==false){
+    const displayfib1=document.getElementById('form-feedback');
+    displayfib1.style.display='block';
+    displayfib1.style.color='dc3545';
+    feedbackDiv.innerHTML="Registration unsuccessful!";
+    
+      // If all validations pass, submit the form
+      //form.submit();
+}
+form.submit();
 
     });
 });
