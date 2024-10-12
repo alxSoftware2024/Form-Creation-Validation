@@ -15,19 +15,19 @@ if(username.length<3)
 {
     isValid=false;
     messages[0]=['You enter incorrect user'];
-    alert(messages[0]);
+   
 }
 if (/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email.value)) 
 {
     isValid=false;
     messages[1]=['Email Requared'];
-    alert(messages[1]);
+  
 }
 if(password.length<8)
 {
     isValid=false;
     messages[2]=['password length  invalid'];
-    alert(messages[2]);
+   
 }
 if(isValid==true){
     const displayfib=document.getElementById('form-feedback');
