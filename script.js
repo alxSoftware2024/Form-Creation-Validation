@@ -29,30 +29,31 @@ if(password.length<8)
     messages[2]=['password length  invalid'];
    
 }
-if(isValid){
+const feedbackDiv=document.getElementById('form-feedback');
+feedbackDiv.style.display = "block";
+if (isValid) {
+    feedbackDiv.textContent = "Registration successful!";
+    feedbackDiv.style.color = "#28a745";
+} else {
+    feedbackDiv.innerHTML = messages.join("<br>");
+    feedbackDiv.style.color = "#dc3545";
+}
+/*if(isValid){
     const feedbackDiv=document.getElementById('form-feedback');
     feedbackDiv.style.display="block";
     feedbackDiv.textContent="Registration successful!";
     feedbackDiv.style.color="#28a745";
       // If all validations pass, submit the form
-      //form.submit();
+      form.submit();
 }
 if(!isValid){
     const feedbackDiv=document.getElementById('form-feedback');
     feedbackDiv.style.display="block";
-    
-       const feedbackMessage = messages.join('<br>');
-    
-       // Assign the message to the innerHTML of feedbackDiv
+     const feedbackMessage = messages.join('<br>');
+      // Assign the message to the innerHTML of feedbackDiv
        feedbackDiv.innerHTML = feedbackMessage;
-       
        // Set the color of feedbackDiv
-       feedbackDiv.style.color = "#dc3545";
-   
-     
-}
-
-
-    });
+       feedbackDiv.style.color = "#dc3545";     
+} */ });
 });
     
