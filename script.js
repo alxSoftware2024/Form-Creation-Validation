@@ -31,17 +31,16 @@ if(password.length<8)
 }
 if(isValid){
     const feedbackDiv=document.getElementById('form-feedback');
-    feedbackDiv.style.display='block';
+    feedbackDiv.style.display="block";
     feedbackDiv.textContent="Registration successful!";
-    feedbackDiv.style.color='#28a745';
+    feedbackDiv.style.color="#28a745";
       // If all validations pass, submit the form
       form.submit();
 }
 if(!isValid){
     const feedbackDiv=document.getElementById('form-feedback');
-    feedbackDiv.style.display='block';
-    //displayfib1.style.color='#dc3545';
-       // Join messages with <br> to form a single string
+    feedbackDiv.style.display="block";
+    
        const feedbackMessage = messages.join('<br>');
     
        // Assign the message to the innerHTML of feedbackDiv
@@ -49,13 +48,7 @@ if(!isValid){
        
        // Set the color of feedbackDiv
        feedbackDiv.style.color = "#dc3545";
-    /*for(let i=0;i<=messages.length;i++)
-    {
-//console.log(messages[i]);
-       feedbackDiv.innerHTML=`<br>${messages[i]}</br>`;
-       
-    }
-    */
+   
      
 }
 
