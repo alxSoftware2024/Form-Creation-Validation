@@ -8,43 +8,58 @@ document.addEventListener('DOMContentLoaded', function() {
         const email=document.getElementById('email').value.trim();
         const password=document.getElementById('password').value.trim();
 var isValid=true;
-var messages=[''];
-const validatemail='/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/';
+var messages=[];
+//const validatemail='/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/';
 
 if(username.length<3)
 {
     isValid=false;
     messages[0]=['You enter incorrect user'];
+    alert(messages[0]);
 }
-if(!email.match(validatemail))
+if (/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email.value)) 
 {
     isValid=false;
     messages[1]=['Email Requared'];
+    alert(messages[1]);
 }
 if(password.length<8)
 {
     isValid=false;
     messages[2]=['password length  invalid'];
+    alert(messages[2]);
 }
 if(isValid==true){
     const displayfib=document.getElementById('form-feedback');
     displayfib.style.display='block';
-    displayfib.style.color='28a745';
+    displayfib.style.color='#28a745';
     feedbackDiv.innerHTML="Registration successful!";
     
       // If all validations pass, submit the form
-      //form.submit();
+      form.submit();
 }
 if(isValid==false){
     const displayfib1=document.getElementById('form-feedback');
     displayfib1.style.display='block';
-    displayfib1.style.color='dc3545';
-    feedbackDiv.innerHTML="Registration unsuccessful!";
+    //displayfib1.style.color='#dc3545';
+       // Join messages with <br> to form a single string
+       const feedbackMessage = messages.join('<br>');
     
-      // If all validations pass, submit the form
-      //form.submit();
+       // Assign the message to the innerHTML of feedbackDiv
+       displayfib1.innerHTML = feedbackMessage;
+       
+       // Set the color of feedbackDiv
+       displayfib1.style.color = "#dc3545";
+    /*for(let i=0;i<=messages.length;i++)
+    {
+//console.log(messages[i]);
+       feedbackDiv.innerHTML=`<br>${messages[i]}</br>`;
+       
+    }
+    */
+     
 }
-form.submit();
+
 
     });
 });
