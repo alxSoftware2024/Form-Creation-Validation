@@ -29,7 +29,7 @@ if(password.length<8)
     messages[2]=['password length  invalid'];
    
 }
-if(isValid==true){
+if(isValid){
     const displayfib=document.getElementById('form-feedback');
     displayfib.style.display='block';
     displayfib.style.color='#28a745';
@@ -38,7 +38,7 @@ if(isValid==true){
       // If all validations pass, submit the form
       form.submit();
 }
-if(isValid==false){
+if(!isValid){
     const displayfib1=document.getElementById('form-feedback');
     displayfib1.style.display='block';
     //displayfib1.style.color='#dc3545';
