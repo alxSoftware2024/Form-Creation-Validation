@@ -32,9 +32,8 @@ if(password.length<8)
 if(isValid){
     const displayfib=document.getElementById('form-feedback');
     displayfib.style.display='block';
-    displayfib.style.color='#28a745';
     feedbackDiv.textContent="Registration successful!";
-    
+    displayfib.style.color='#28a745';
       // If all validations pass, submit the form
       form.submit();
 }
