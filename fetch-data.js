@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
      const response=await fetch(apiUrl);
      const users=await response.json();
      dataContainer.innerHTML = '';
-     const userlist=document.createElement('ul');
+     const userList=document.createElement('ul');
      users.forEach(user=> {
       
         const li=document.createElement('li');
         li.textContent=user.name;
-        userlist.appendChild(li);
+        userList.appendChild(li);
      });
-     dataContainer.appendChild(userlist);
+     dataContainer.appendChild(userList);
     }
      catch (error) {
         dataContainer.innerHTML ='Failed to load user data.';
