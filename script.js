@@ -31,11 +31,11 @@ if(password.length<8)
 }
 const feedbackDiv=document.getElementById('form-feedback');
 feedbackDiv.style.display = "block";
-if (isValid===true) {
+if (isValid==true) {
     feedbackDiv.textContent = "Registration successful!";
     feedbackDiv.style.color = "#28a745";
     form.submit();
-} if(isValid===false){
+} if(isValid==false){
     feedbackDiv.innerHTML = messages.join("<br>");
     feedbackDiv.style.color = "#dc3545";
 }
