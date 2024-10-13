@@ -14,28 +14,28 @@ var messages=[];
 if(username.length<3)
 {
     isValid=false;
-    messages[0]=['You enter incorrect user'];
+    messages.push('The user name not less than 3');
    
 }
-if (/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email.value)) 
+if (!email.includes('@')||!email.includes('.')) 
 {
     isValid=false;
-    messages[1]=['Email Requared'];
-  
+messages.push('Email must include @ and .');
 }
 if(password.length<8)
 {
     isValid=false;
-    messages[2]=['password length  invalid'];
+    messages.push('Password length not less than 8')
    
 }
 const feedbackDiv=document.getElementById('form-feedback');
 feedbackDiv.style.display = "block";
-if (isValid==true) {
+if (isValid) {
     feedbackDiv.textContent = "Registration successful!";
     feedbackDiv.style.color = "#28a745";
     form.submit();
-} if(isValid==false){
+} 
+else{
     feedbackDiv.innerHTML = messages.join("<br>");
     feedbackDiv.style.color = "#dc3545";
 }
